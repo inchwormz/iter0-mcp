@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.iter0/iter0",
+  "title": "iter0",
+  "description": "Build and edit launch-ready websites for tech founders from a brief or an authorised reference.",
+  "version": "1.0.0",
+  "websiteUrl": "https://iter0.com/mcp",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://iter0.com/api/mcp"
+    }
+  ]
+}
