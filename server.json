@@ -1,10 +1,15 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "com.iter0/iter0",
+  "name": "io.github.inchwormz/iter0-mcp",
   "title": "iter0",
   "description": "Build and edit launch-ready websites for tech founders from a brief or an authorised reference.",
   "version": "1.0.0",
   "websiteUrl": "https://iter0.com/mcp",
+  "repository": {
+    "url": "https://github.com/inchwormz/iter0-mcp",
+    "source": "github",
+    "id": "1410979403"
+  },
   "remotes": [
     {
       "type": "streamable-http",
