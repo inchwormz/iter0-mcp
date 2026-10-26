@@ -7,7 +7,7 @@ Connect an AI agent such as Claude Code, Cursor or Codex to [iter0](https://iter
 - read your saved designs and their status;
 - check a site for problems before you share it;
 - publish a site to a free `name.iter0.app` address, and take it offline again;
-- read and reply to comments left on an iter0 canvas.
+- put a finished site on an iter0 canvas, then read and reply to the comments left there.
 
 Paid steps show a price quote first. Nothing is spent until you confirm the quote.
 
@@ -98,14 +98,16 @@ For direct API calls (not MCP), create a bearer token in your account settings: 
 | `iter0_undo_edit` | Undoes the last saved edit, while it is still the current page. |
 | `iter0_restore_version` | Restores an earlier saved version. Two steps. |
 
-### Canvas feedback (free)
+### Canvas (free)
 
 | Tool | What it does |
 | --- | --- |
-| `iter0_push_site` | Puts finished HTML pages on your iter0 canvas so you can comment on them. Publishes nothing. |
-| `iter0_get_canvas_feedback` | Reads the comments and notes you left on the canvas. |
+| `iter0_push_site` | Puts finished HTML pages on your iter0 canvas so you can comment on them. Publishes nothing. Up to 20 pages. |
+| `iter0_get_canvas_feedback` | Reads the comments and notes you left on the canvas, with each page's version. |
 | `iter0_read_canvas_page` | Reads one canvas page's HTML and version before a revision. |
-| `iter0_reply_to_feedback` | Adds a reply to a comment thread. Never resolves or approves anything. |
+| `iter0_reply_to_feedback` | Adds a reply to a comment thread or pin. Never resolves or approves anything. |
+
+To push a build from your computer, install the local server (commands at <https://iter0.com/mcp>). Its `iter0_push_site` takes `rootDir`, the build folder, and reads the pages from there, inlining their relative CSS, scripts and images. The skill sets out the full canvas loop: push, open the `canvasUrl`, read feedback, reply, then push again with each page's `expectedVersion`. See [`skills/iter0-website-builder/SKILL.md`](skills/iter0-website-builder/SKILL.md).
 
 ## Credits
 
