@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "failures": [],
+  "authorLabel": "George Orwell",
+  "draftWords": 1388,
+  "sourceOverlap": {
+    "ngramSize": 8,
+    "matchedHashes": 0,
+    "maxAllowed": 0
+  },
+  "aiClicheHits": {},
+  "signpostHits": {},
+  "authorClaims": [],
+  "checks": [
+    "source n-gram overlap using profile hashes",
+    "source-author byline or voice claims",
+    "common AI-prose markers",
+    "roadmap-opening and recap-ending signposts"
+  ]
+}
