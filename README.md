@@ -58,7 +58,7 @@ For direct API calls (not MCP), create a bearer token in your account settings: 
 
 ## Tools
 
-22 tools are live on the endpoint. Costs are from the tool descriptions.
+23 tools are listed by the server. Costs are from the tool descriptions.
 
 ### No sign-in
 
@@ -103,11 +103,12 @@ For direct API calls (not MCP), create a bearer token in your account settings: 
 | Tool | What it does |
 | --- | --- |
 | `iter0_push_site` | Puts finished HTML pages on your iter0 canvas so you can comment on them. Publishes nothing. Up to 20 pages. |
-| `iter0_get_canvas_feedback` | Reads the comments and notes you left on the canvas, with each page's version. |
+| `iter0_get_canvas_feedback` | Reads comments, notes and pins, with each page's version and available positions on the canvas and page. |
+| `iter0_get_canvas_snapshot` | Returns a page screenshot with numbered feedback markers, outlines around commented elements and a legend, or a canvas overview with notes in place. Free and read-only. |
 | `iter0_read_canvas_page` | Reads one canvas page's HTML and version before a revision. |
 | `iter0_reply_to_feedback` | Adds a reply to a comment thread or pin. Never resolves or approves anything. |
 
-To push a build from your computer, install the local server (commands at <https://iter0.com/mcp>). Its `iter0_push_site` takes `rootDir`, the build folder, and reads the pages from there, inlining their relative CSS, scripts and images. The skill sets out the full canvas loop: push, open the `canvasUrl`, read feedback, reply, then push again with each page's `expectedVersion`. See [`skills/iter0-website-builder/SKILL.md`](skills/iter0-website-builder/SKILL.md).
+To push a build from your computer, install the local server (commands at <https://iter0.com/mcp>). Its `iter0_push_site` takes `rootDir`, the build folder, and reads the pages from there, inlining their relative CSS, scripts and images. Read feedback with `iter0_get_canvas_feedback`, then call `iter0_get_canvas_snapshot` with the `designId` and `pageKey` before editing to see notes on that page. Set `view` to `canvas` for an overview. Check `warnings` and `feedbackTruncated` for missing renders or omitted items. The skill sets out the full canvas loop: push, open the `canvasUrl`, read feedback, take a snapshot, reply, then push again with each page's `expectedVersion`. See [`skills/iter0-website-builder/SKILL.md`](skills/iter0-website-builder/SKILL.md).
 
 ## Credits
 
